@@ -24,10 +24,15 @@
             <HBox alignment="CENTER" prefHeight="88.0" prefWidth="584.0" BorderPane.alignment="CENTER">
                 <children>
                     <ToggleButton fx:id="cBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="C" />
-                    <ToggleButton fx:id="asmBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="ASM">
+                    <ToggleButton fx:id="asmBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="ASM" >
                         <HBox.margin>
-                            <Insets left="20.0" right="150.0" />
+                            <Insets left="20.0"/>
                         </HBox.margin></ToggleButton>
+                    <ToggleButton fx:id="javaBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="JAVA" >
+                        <HBox.margin>
+                            <Insets left="20.0" right="80.0" />
+                        </HBox.margin></ToggleButton>
+
                     <VBox alignment="BASELINE_LEFT" prefHeight="88.0" prefWidth="266.0" spacing="5">
                         <children>
                             <Label fx:id="cTimeLabel" text="Czas wykonania programu w C to: ">

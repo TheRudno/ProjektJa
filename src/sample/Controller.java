@@ -9,6 +9,9 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.ArcType;
+import model.CDLLLib;
+import model.JavaAlgorithm;
+
 import java.util.concurrent.ThreadLocalRandom;
 
 
@@ -24,6 +27,8 @@ public class Controller {
     @FXML
     ToggleButton cBtn;
     @FXML
+    ToggleButton javaBtn;
+    @FXML
     Label cTimeLabel;
     @FXML
     Label asmTimeLabel;
@@ -36,31 +41,59 @@ public class Controller {
 
     @FXML
     private void onGenerateClick(){
-            generateBtn.setDisable(true);
-            if(asmBtn.isSelected()){
-                System.out.println("wykonuje asm");
-            }else if(cBtn.isSelected()){
-                System.out.println("wykonuje c");
-
-            }
-            GraphicsContext gc = fernCanvas.getGraphicsContext2D();
-            gc.setFill(Color.GREEN);
-            gc.setStroke(Color.GREEN);
-            Point tmp = new Point(0, 0);
-            int iterations = 50000;
-            long startTime = System.currentTimeMillis();
-            for (int i = 0; i <= iterations; i++) {
-                gc.fillArc(tmp.Remap(tmp.x, -5, 5, 0, 630),
-                        tmp.Remap(tmp.y, 0, 10, 464, 0),
-                        1, 1, 0, 360, ArcType.ROUND);
-                tmp = FernAlgorithm(ThreadLocalRandom.current().nextInt(0, 100 + 1), tmp.x, tmp.y);
-            }
-            long endTime = System.currentTimeMillis();
-            asmTimeLabel.setText("Czas wykonania programu w ASM to: " + (endTime-startTime) + " ms");
-            cTimeLabel.setText("Czas wykonania programu w C to: " + (endTime-startTime) + " ms");
-            generateBtn.setDisable(false);
+        generateBtn.setDisable(true);
+        int size = 100000;
+        float points[]= new float[size];
+        long startTime = 0;
+        if(asmBtn.isSelected()){
+            startTime = System.currentTimeMillis();
+            System.out.println("wykonuje asm");
+        }else if(cBtn.isSelected()){
+            startTime = System.currentTimeMillis();
+            System.out.println("wykonuje c");
+            CDLLLib cLib = new CDLLLib();
+            cLib.BarnsleyFernAlgorithm(points,size,0f,0f,0f,0f,0f,0f,0f,1.6f,1.6f,0.44f);
+        }else if(javaBtn.isSelected()){
+            System.out.println("wykonuje java");
+            startTime = System.currentTimeMillis();
+            points = JavaAlgorithm.BarnsleyFernAlgorithm(points,size,0f,0f,0f,0f,0f,0f,0f,1.6f,1.6f,0.44f);
+        }
+        draw(points);
+        drawOld();
+        long endTime = System.currentTimeMillis();
+        asmTimeLabel.setText("Czas wykonania programu w ASM to: " + (endTime-startTime) + " ms");
+        cTimeLabel.setText("Czas wykonania programu w C to: " + (endTime-startTime) + " ms");
+        asmBtn.setSelected(false);
+        cBtn.setSelected(false);
+        javaBtn.setSelected(false);
+        generateBtn.setDisable(false);
     }
 
+    private void draw(float points[]){
+        GraphicsContext gc = fernCanvas.getGraphicsContext2D();
+        gc.clearRect(0,0,fernCanvas.getWidth(),fernCanvas.getHeight());
+        gc.setFill(Color.GREEN);
+        gc.setStroke(Color.GREEN);
+        for (int i = 0; i < points.length; i=i+2) {
+            gc.fillArc(Point.Remap(points[i], -5, 5, 0, 630),
+                    Point.Remap(points[i+1], 0, 10, 464, 0),
+                    1, 1, 0, 360, ArcType.ROUND);
+        }
+    }
+
+    private void drawOld(){
+        GraphicsContext gc = fernCanvas.getGraphicsContext2D();
+        gc.setFill(Color.GREEN);
+        gc.setStroke(Color.GREEN);
+        Point tmp = new Point(0, 0);
+        int iterations = 50000;
+        for (int i = 0; i <= iterations; i++) {
+           gc.fillArc(tmp.Remap(tmp.x, -5, 5, 0, 630),
+                    tmp.Remap(tmp.y, 0, 10, 464, 0),
+                    1, 1, 0, 360, ArcType.ROUND);
+            tmp = FernAlgorithm(ThreadLocalRandom.current().nextInt(0, 100 + 1), tmp.x, tmp.y);
+        }
+    }
 
     private Point FernAlgorithm(int p, float xn, float yn) {
             float x, y;
