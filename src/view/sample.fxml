@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="pane" maxHeight="600" maxWidth="900" minHeight="600" minWidth="900" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+        <left>
+            <VBox prefHeight="457.0" prefWidth="155.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox layoutX="10.0" layoutY="15.0" prefHeight="30.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="24.0" prefWidth="35.0" text="Points">
+                     <HBox.margin>
+                        <Insets left="17.0" right="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="pointsText" maxWidth="65.0" minWidth="65.0" prefWidth="65.0" />
+               </children>
+               <padding>
+                  <Insets top="2.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="30.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="24.0" prefWidth="17.0" text="e1">
+                     <HBox.margin>
+                        <Insets left="35.0" right="15.0" />
+                     </HBox.margin></Label>
+                  <TextField fx:id="e1Text" maxWidth="65.0" minWidth="65.0" prefWidth="65.0" />
+               </children>
+               <padding>
+                  <Insets top="2.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="24.0" prefWidth="17.0" text="e2">
+                     <HBox.margin>
+                        <Insets left="35.0" right="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="e2Text" maxWidth="65.0" minWidth="65.0" prefWidth="65.0" />
+               </children>
+               <padding>
+                  <Insets top="2.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="24.0" prefWidth="17.0" text="e3">
+                     <HBox.margin>
+                        <Insets left="35.0" right="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="e3Text" maxWidth="65.0" minWidth="65.0" prefWidth="65.0" />
+               </children>
+               <padding>
+                  <Insets top="2.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="24.0" prefWidth="17.0" text="e4">
+                     <HBox.margin>
+                        <Insets left="35.0" right="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="e4Text" maxWidth="65.0" minWidth="65.0" prefWidth="65.0" />
+               </children>
+               <padding>
+                  <Insets top="2.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="24.0" prefWidth="17.0" text="f1">
+                     <HBox.margin>
+                        <Insets left="35.0" right="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="f1Text" maxWidth="65.0" minWidth="65.0" prefWidth="65.0" />
+               </children>
+               <padding>
+                  <Insets top="2.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="24.0" prefWidth="17.0" text="f2">
+                     <HBox.margin>
+                        <Insets left="35.0" right="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="f2Text" maxWidth="65.0" minWidth="65.0" prefWidth="65.0" />
+               </children>
+               <padding>
+                  <Insets top="2.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="24.0" prefWidth="17.0" text="f3">
+                     <HBox.margin>
+                        <Insets left="35.0" right="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="f3Text" maxWidth="65.0" minWidth="65.0" prefWidth="65.0" />
+               </children>
+               <padding>
+                  <Insets top="2.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="24.0" prefWidth="17.0" text="f4">
+                     <HBox.margin>
+                        <Insets left="35.0" right="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="f4Text" maxWidth="65.0" minWidth="65.0" prefWidth="65.0" />
+               </children>
+               <padding>
+                  <Insets top="2.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="362.0" prefHeight="30.0" prefWidth="200.0">
+               <padding>
+                  <Insets top="2.0" />
+               </padding>
+               <children>
+                  <Button fx:id="reset" mnemonicParsing="false" onAction="#onResetClick" text="Reset">
+                     <HBox.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </HBox.margin></Button>
+                  <Button fx:id="generateBtn" mnemonicParsing="false" onAction="#onGenerateClick" text="Generate" />
+               </children>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </HBox>
+         </children></VBox>
+        </left>
+        <bottom>
+            <HBox alignment="CENTER" prefHeight="88.0" prefWidth="584.0" BorderPane.alignment="CENTER">
+                <children>
+                    <ToggleButton fx:id="cBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="C" />
+                    <ToggleButton fx:id="asmBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="ASM">
+                        <HBox.margin>
+                            <Insets left="20.0" />
+                        </HBox.margin></ToggleButton>
+                    <ToggleButton fx:id="javaBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="JAVA">
+                        <HBox.margin>
+                            <Insets left="20.0" right="100.0" />
+                        </HBox.margin></ToggleButton>
+            <Button fx:id="testBtn" mnemonicParsing="false" onAction="#onTestClick" text="SPEED TEST" />
+
+                    <VBox alignment="BASELINE_LEFT" prefHeight="88.0" prefWidth="266.0" spacing="5">
+                        <children>
+                            <Label fx:id="cTimeLabel">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin></Label>
+                            <Label fx:id="asmTimeLabel" />
+                  <Label fx:id="javaTimeLabel" layoutX="10.0" layoutY="58.0" />
+                        </children>
+                        <HBox.margin>
+                            <Insets left="130.0" />
+                        </HBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets top="7.0" />
+               </padding>
+                    </VBox>
+                </children>
+            </HBox>
+        </bottom>
+        <top>
+            <Label text="Barnsley Fern" BorderPane.alignment="CENTER">
+                <padding>
+                    <Insets top="5.0" />
+                </padding>
+                <font>
+                    <Font size="34.0" />
+                </font></Label>
+        </top>
+        <center>
+            <Canvas fx:id="fernCanvas" height="464.0" width="630.0" BorderPane.alignment="CENTER" />
+        </center>
+</BorderPane>

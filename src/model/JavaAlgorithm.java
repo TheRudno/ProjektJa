@@ -20,16 +20,17 @@ public class JavaAlgorithm {
             }
             else if (p <= 86) {
                 startX = 0.85f * startX + 0.04f * startY + e2;
-                startY = -0.04f * startX + 0.85f * startY + 1.6f + f2;
+                startY = -0.04f * startX + 0.85f * startY + f2;
             }
             else if (p <= 93) {
                 startX = 0.2f * startX - 0.26f * startY + e3;
-                startY = 0.23f * startX + 0.22f * startY + 1.6f + f3;
+                startY = 0.23f * startX + 0.22f * startY + f3;
             }
             else {
                 startX = -0.15f * startX + 0.28f * startY + e4;
-                startY = 0.26f * startX + 0.24f * startY + 0.44f + f4;
+                startY = 0.26f * startX + 0.24f * startY + f4;
             }
+
             points[i] = startX;
             points[i + 1] = startY;
         }

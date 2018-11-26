@@ -8,6 +8,14 @@ public class Point {
     float x;
     float y;
 
+    public float getX() {
+        return x;
+    }
+
+    public float getY() {
+        return y;
+    }
+
     public Point(float x, float y) {
         this.x = x;
         this.y = y;
@@ -18,4 +26,12 @@ public class Point {
         return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
     }
 
+    @Override
+    public String toString() {
+        return "Point{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
 }
+
