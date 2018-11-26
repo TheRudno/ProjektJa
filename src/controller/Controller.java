@@ -130,7 +130,7 @@ public class Controller {
         gc.setFill(Color.GREEN);
         gc.setStroke(Color.GREEN);
         for (int i = 0; i < points.length; i=i+2) {
-            gc.fillArc(Point.Remap(points[i], -4.5f, 4.5f, 0, (float)fernCanvas.getWidth()),
+            gc.fillArc(Point.Remap(points[i], -5, 5, 0, (float)fernCanvas.getWidth()),
                     Point.Remap(points[i+1], 0, 10, (float)fernCanvas.getHeight(), 0),
                     1, 1, 0, 360, ArcType.ROUND);
         }
@@ -159,6 +159,7 @@ public class Controller {
             return 0;
         }
     }
+
 
     @Deprecated
     private void drawOld(){
