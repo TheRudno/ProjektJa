@@ -7,7 +7,7 @@ public class AsmDLLLib {
 
     static{
         try {
-            System.load("E:/projekty java/fernc/AssemblerDLL_VISUAL_STUDIO/x64/Debug/AssemblerDllLibrary.dll");
+            System.load("E:/projekty java/BarnsleyFern/AssemblerDllLib/x64/Debug/AssemblerDllLibrary.dll");
         } catch (UnsatisfiedLinkError e) {
             System.err.println("Native code library failed to load.\n" + e);
             System.exit(1);
