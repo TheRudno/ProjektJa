@@ -10,12 +10,10 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.ArcType;
+import model.AsmDLLLib;
 import model.CDLLLib;
 import model.JavaAlgorithm;
 import sample.Point;
-
-import java.util.concurrent.ThreadLocalRandom;
-
 
 public class Controller {
     @FXML Canvas fernCanvas;
@@ -58,20 +56,20 @@ public class Controller {
         long endTime = 0;
         if(asmBtn.isSelected()){
             startTime = System.currentTimeMillis();
+            AsmDLLLib.BarnsleyFernAlgorithm(points, size,getValue(e1Text),getValue(e2Text),getValue(e3Text),getValue(e4Text),getValue(f1Text),getValue(f2Text),getValue(f3Text),getValue(f4Text));
             System.out.println("wykonuje asm");
             endTime = System.currentTimeMillis();
         }else if(cBtn.isSelected()){
             startTime = System.currentTimeMillis();
             System.out.println("wykonuje c");
-            CDLLLib.BarnsleyFernAlgorithm(points,size,0f,0f,getValue(e1Text),getValue(e2Text),getValue(e3Text),getValue(e4Text),getValue(f1Text),getValue(f2Text),getValue(f3Text),getValue(f4Text));
+            CDLLLib.BarnsleyFernAlgorithm(points, size,0f,0f,getValue(e1Text),getValue(e2Text),getValue(e3Text),getValue(e4Text),getValue(f1Text),getValue(f2Text),getValue(f3Text),getValue(f4Text));
             endTime = System.currentTimeMillis();
         }else if(javaBtn.isSelected()){
             System.out.println("wykonuje java");
             startTime = System.currentTimeMillis();
-            points = JavaAlgorithm.BarnsleyFernAlgorithm(points,size,0.f,0.f,getValue(e1Text),getValue(e2Text),getValue(e3Text),getValue(e4Text),getValue(f1Text),getValue(f2Text),getValue(f3Text),getValue(f4Text));
+            points = JavaAlgorithm.BarnsleyFernAlgorithm(points, size,0.f,0.f,getValue(e1Text),getValue(e2Text),getValue(e3Text),getValue(e4Text),getValue(f1Text),getValue(f2Text),getValue(f3Text),getValue(f4Text));
             endTime = System.currentTimeMillis();
         }
-        //drawOld();
         draw(points);
         cTimeLabel.setText("");
         javaTimeLabel.setText("");
@@ -113,7 +111,7 @@ public class Controller {
         }
         for (int i = 0; i < 10; i++) {
             startTime = System.currentTimeMillis();
-
+            AsmDLLLib.BarnsleyFernAlgorithm(points, size,getValue(e1Text),getValue(e2Text),getValue(e3Text),getValue(e4Text),getValue(f1Text),getValue(f2Text),getValue(f3Text),getValue(f4Text));
             endTime = System.currentTimeMillis();
             asmTime = asmTime + (endTime-startTime);
         }
@@ -160,42 +158,6 @@ public class Controller {
         }
     }
 
-
-    @Deprecated
-    private void drawOld(){
-        GraphicsContext gc = fernCanvas.getGraphicsContext2D();
-        gc.clearRect(0,0,fernCanvas.getWidth(),fernCanvas.getHeight());
-        gc.setFill(Color.GREEN);
-        gc.setStroke(Color.GREEN);
-        Point tmp = new Point(0, 0);
-        int iterations = 50000;
-        float buffor[] = new float[iterations*2];
-        for (int i = 0; i <= iterations; i++) {
-           gc.fillArc(tmp.Remap(tmp.getX(), -5, 5, 0, (float)fernCanvas.getWidth()),
-                    tmp.Remap(tmp.getY(), 0, 10, (float)fernCanvas.getHeight(), 0),
-                    1, 1, 0, 360, ArcType.ROUND);
-            tmp = FernAlgorithm(ThreadLocalRandom.current().nextInt(0, 100 + 1), tmp.getX(), tmp.getY());
-        }
-    }
-
-    @Deprecated
-    private Point FernAlgorithm(int p, float xn, float yn) {
-            float x, y;
-            if (p <= 2) {
-                x = 0 ;
-                y = 0.16f * yn ;
-            } else if (p <= 86) {
-                x = 0.85f * xn + 0.04f * yn;
-                y = -0.04f * xn + 0.85f * yn + 1.6f;
-            } else if (p <= 93) {
-                x = 0.2f * xn - 0.26f * yn;
-                y = 0.23f * xn + 0.22f * yn + 1.6f;
-            } else {
-                x = -0.15f * xn + 0.28f * yn;
-                y = 0.26f * xn + 0.24f * yn + 0.44f;
-            }
-            return new Point(x, y);
-    }
 }
 
 
