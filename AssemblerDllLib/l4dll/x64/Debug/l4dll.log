@@ -1,7 +1,8 @@
-﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (l4dll.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (l4dll.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   Assembling dll.asm...
-dll.asm(40): warning A6004: procedure argument or local not referenced : hInstDLL
-dll.asm(40): warning A6004: procedure argument or local not referenced : reason
-dll.asm(40): warning A6004: procedure argument or local not referenced : reserved1
-  l4dll.vcxproj -> E:\projekty java\fernc\AssemblerDLL_VISUAL_STUDIO\x64\Debug\AssemblerDllLibrary.dll
-  l4dll.vcxproj -> E:\projekty java\fernc\AssemblerDLL_VISUAL_STUDIO\x64\Debug\AssemblerDllLibrary.pdb (Partial PDB)
+dll.asm(24): warning A6004: procedure argument or local not referenced : hInstDLL
+dll.asm(24): warning A6004: procedure argument or local not referenced : reason
+dll.asm(24): warning A6004: procedure argument or local not referenced : reserved1
+     Creating library C:\Users\theru\Desktop\ProjektJa\AssemblerDllLib\x64\Debug\AssemblerDllLibrary.lib and object C:\Users\theru\Desktop\ProjektJa\AssemblerDllLib\x64\Debug\AssemblerDllLibrary.exp
+AssemblerDllLibrary.exp : warning LNK4070: /OUT:l4dll.dll directive in .EXP differs from output filename 'C:\Users\theru\Desktop\ProjektJa\AssemblerDllLib\x64\Debug\AssemblerDllLibrary.dll'; ignoring directive
+  l4dll.vcxproj -> C:\Users\theru\Desktop\ProjektJa\AssemblerDllLib\x64\Debug\AssemblerDllLibrary.dll

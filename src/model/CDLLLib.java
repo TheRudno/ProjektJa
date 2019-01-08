@@ -6,7 +6,8 @@ public class CDLLLib {
 
     static{
         try {
-         System.load("E:/projekty java/BarnsleyFern/CppDllLib/x64/Release/CDllLib.dll");
+         System.load("C:/Users/theru/Desktop/ProjektJa/CppDllLib/x64/Release/CDllLib.dll");
+         //System.loadLibrary("CDllLib");
         } catch (UnsatisfiedLinkError e) {
             System.err.println("Native code library failed to load.\n" + e);
             System.exit(1);

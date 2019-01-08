@@ -51,9 +51,13 @@ public class Controller {
     private void onGenerateClick(){
         generateBtn.setDisable(true);
         int size = (int)getValue(pointsText);
+        if(size%2 != 0){
+            size++;
+        }
         float points[]= new float[size];
         long startTime = 0 ;
         long endTime = 0;
+        System.out.println(size);
         if(asmBtn.isSelected()){
             startTime = System.currentTimeMillis();
             AsmDLLLib.BarnsleyFernAlgorithm(points, size,getValue(e1Text),getValue(e2Text),getValue(e3Text),getValue(e4Text),getValue(f1Text),getValue(f2Text),getValue(f3Text),getValue(f4Text));
@@ -92,8 +96,11 @@ public class Controller {
 
     @FXML
     public void onTestClick(){
-        long asmTime = 0,cTime = 0,javaTime = 0;
-        int size = 5000000;
+        long asmTime = -1,cTime = -1,javaTime = -1;
+        int size = (int)getValue(pointsText);
+        if(size%2 != 0){
+            size++;
+        }
         float points[]= new float[size];
         long startTime = 0 ;
         long endTime = 0;
@@ -101,24 +108,27 @@ public class Controller {
             startTime = System.currentTimeMillis();
             CDLLLib.BarnsleyFernAlgorithm(points,size,0f,0f,getValue(e1Text),getValue(e2Text),getValue(e3Text),getValue(e4Text),getValue(f1Text),getValue(f2Text),getValue(f3Text),getValue(f4Text));
             endTime = System.currentTimeMillis();
-            cTime = cTime + (endTime-startTime);
+            if(cTime == -1 || endTime-startTime<cTime )
+                cTime = endTime-startTime;
         }
         for (int i = 0; i < 10; i++) {
             startTime = System.currentTimeMillis();
             JavaAlgorithm.BarnsleyFernAlgorithm(points,size,0f,0f,getValue(e1Text),getValue(e2Text),getValue(e3Text),getValue(e4Text),getValue(f1Text),getValue(f2Text),getValue(f3Text),getValue(f4Text));
             endTime = System.currentTimeMillis();
-            javaTime = javaTime + (endTime-startTime);
+            if(javaTime == -1 || endTime-startTime<javaTime )
+                javaTime = endTime-startTime;
         }
         for (int i = 0; i < 10; i++) {
             startTime = System.currentTimeMillis();
             AsmDLLLib.BarnsleyFernAlgorithm(points, size,getValue(e1Text),getValue(e2Text),getValue(e3Text),getValue(e4Text),getValue(f1Text),getValue(f2Text),getValue(f3Text),getValue(f4Text));
             endTime = System.currentTimeMillis();
-            asmTime = asmTime + (endTime-startTime);
+            if(asmTime == -1 || endTime-startTime<asmTime )
+                asmTime = endTime-startTime;
         }
 
-        cTimeLabel.setText("Czas wykonania programu w Cpp to: " + (cTime/10) + "ms");
-        asmTimeLabel.setText("Czas wykonania programu w ASM to: " + (asmTime/10) + "ms");
-        javaTimeLabel.setText("Czas wykonania programu w JAVA to: " + (javaTime/10) + "ms");
+        cTimeLabel.setText("Czas wykonania programu w Cpp to: " + (cTime) + "ms");
+        asmTimeLabel.setText("Czas wykonania programu w ASM to: " + (asmTime) + "ms");
+        javaTimeLabel.setText("Czas wykonania programu w JAVA to: " + (javaTime) + "ms");
 
     }
 
@@ -135,14 +145,14 @@ public class Controller {
     }
 
     private void setDefault(){
-        e1Text.setText("0");
-        e2Text.setText("0");
-        e3Text.setText("0");
-        e4Text.setText("0");
-        f1Text.setText("0");
-        f2Text.setText("1.6");
-        f3Text.setText("1.6");
-        f4Text.setText("0.44");
+        e1Text.setText("0.0");
+        e2Text.setText("0.0");
+        e3Text.setText("0.0");
+        e4Text.setText("0.0");
+        f1Text.setText("0.0");
+        f2Text.setText("1.4");
+        f3Text.setText("1.4");
+        f4Text.setText("0.4");
         pointsText.setText("50000");
     }
 

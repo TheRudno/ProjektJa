@@ -1,4 +1,4 @@
 ;-------------------------------------------------------------------------
 LIBRARY l4dll
-EXPORTS Java_model_AssemblerDllLibrary_BarnsleyFernAlgorithm
+EXPORTS Java_model_AsmDLLLib_BarnsleyFernAlgorithm
 ;-------------------------------------------------------------------------

@@ -17,7 +17,8 @@ public class JavaAlgorithm {
         {
             x = startX;
             y = startY;
-            p = ThreadLocalRandom.current().nextInt(0, 100 + 1);
+            Random rand = new Random();
+            p = rand.nextInt(100);
             if (p <= 2) {
                 startX = 0 + e1;
                 startY = 0.16f * y + f1;
