@@ -57,19 +57,15 @@ public class Controller {
         float points[]= new float[size];
         long startTime = 0 ;
         long endTime = 0;
-        System.out.println(size);
         if(asmBtn.isSelected()){
             startTime = System.currentTimeMillis();
             AsmDLLLib.BarnsleyFernAlgorithm(points, size,getValue(e1Text),getValue(e2Text),getValue(e3Text),getValue(e4Text),getValue(f1Text),getValue(f2Text),getValue(f3Text),getValue(f4Text));
-            System.out.println("wykonuje asm");
             endTime = System.currentTimeMillis();
         }else if(cBtn.isSelected()){
             startTime = System.currentTimeMillis();
-            System.out.println("wykonuje c");
             CDLLLib.BarnsleyFernAlgorithm(points, size,0f,0f,getValue(e1Text),getValue(e2Text),getValue(e3Text),getValue(e4Text),getValue(f1Text),getValue(f2Text),getValue(f3Text),getValue(f4Text));
             endTime = System.currentTimeMillis();
         }else if(javaBtn.isSelected()){
-            System.out.println("wykonuje java");
             startTime = System.currentTimeMillis();
             points = JavaAlgorithm.BarnsleyFernAlgorithm(points, size,0.f,0.f,getValue(e1Text),getValue(e2Text),getValue(e3Text),getValue(e4Text),getValue(f1Text),getValue(f2Text),getValue(f3Text),getValue(f4Text));
             endTime = System.currentTimeMillis();

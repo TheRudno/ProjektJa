@@ -2,7 +2,6 @@
 ;  (JNIEnv *, jclass, jfloatArray, jint, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
 
 .DATA
-licznik QWORD 0
 stala0 REAL4 0.0
 stala016 REAL4 0.16
 stala085 REAL4 0.85
@@ -15,6 +14,10 @@ stala022 REAL4 0.22
 stalaminus015 REAL4 -0.15
 stala028 REAL4 0.28
 stala024 REAL4 0.24
+seedValue QWORD 123456789
+coffA QWORD 1103515245
+coffC QWORD 12345
+coffM QWORD 2147483648
 
 
 .CODE
@@ -89,12 +92,13 @@ Java_model_AsmDLLLib_BarnsleyFernAlgorithm proc
 petla:
 	movss xmm5, xmm3
 	movss xmm6, xmm4
-
+	jmp random
+policznonyRand:
 	;tu jest modulo
     mov rdx, 0
-	mov rax, 1234
+	mov rax, seedValue
 	mov rbx, 100
-	div rbx       ; Divides 1234 by 100. EDX = 34 and EAX = 12
+	div rbx       ; Divides RAX by 100. 
 	;modulo
 
 	cmp rdx, 2
@@ -220,7 +224,16 @@ koniec:
 	pop rbp
 	ret
 
-Java_model_AsmDLLLib_BarnsleyFernAlgorithm endp
+random:
+	mov rax,seedValue
+	mul coffA
+	add rax,coffC
+	xor rdx,rdx
+	mov rbx,coffM
+	div rbx
+	mov seedValue,rdx
+	jmp policznonyRand
 
+Java_model_AsmDLLLib_BarnsleyFernAlgorithm endp
 END
 ;-------------------------------------------------------------------------

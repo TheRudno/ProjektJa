@@ -1,4 +1,4 @@
-﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (CDllLibrary.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-     Creating library E:\projekty java\BarnsleyFern\CppDllLib\x64\Debug\CDllLib.lib and object E:\projekty java\BarnsleyFern\CppDllLib\x64\Debug\CDllLib.exp
-  Project3.vcxproj -> E:\projekty java\BarnsleyFern\CppDllLib\x64\Debug\CDllLib.dll
-  Project3.vcxproj -> E:\projekty java\BarnsleyFern\CppDllLib\x64\Debug\CDllLib.pdb (Full PDB)
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (CDllLibrary.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  model_CDLLLib.cpp
+     Creating library C:\Users\theru\Desktop\ProjektJa\CppDllLib\x64\Debug\CDllLib.lib and object C:\Users\theru\Desktop\ProjektJa\CppDllLib\x64\Debug\CDllLib.exp
+  Project3.vcxproj -> C:\Users\theru\Desktop\ProjektJa\CppDllLib\x64\Debug\CDllLib.dll
